@@ -109,6 +109,11 @@
             
             // Khi người dùng bấm đúng vào vị trí (nút play / hạt mầm)
             if (seed.hover(x, y)) {
+				//npc
+				if(document.documentElement.requestFullscreen){
+					document.documentElement.requestFullscreen();
+					}
+
                 hold = 0; 
                 canvas.unbind("click");
                 canvas.unbind("mousemove");
@@ -219,6 +224,7 @@
 
 </body>
 </html>
+
 
 
 
