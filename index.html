@@ -17,7 +17,7 @@
     <body>
  
 			<audio id="bgMusic" loop >
-					<source src="music/nhac.mp3" type="audio/mp3" />
+					<source src="music/nhac.mp3" type="audio/mpeg" />
             </audio> 
 
           
@@ -110,6 +110,15 @@
                 canvas.unbind("click");
                 canvas.unbind("mousemove");
                 canvas.removeClass('hand');
+				var music = document.getElementById("bgMusic");
+
+				if(music){
+					music.play().catch(function(error){
+					console.log(error);
+					});
+				}
+
+				}
             }
         }).mousemove(function(e){
             var offset = canvas.offset(), x, y;
@@ -208,6 +217,7 @@
 
 </body>
 </html>
+
 
 
 
