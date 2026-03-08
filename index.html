@@ -103,11 +103,31 @@
         var foot = tree.footer;
         var hold = 1;
 
+		//npc
+		function openFullscreen() {
+
+    var elem = document.documentElement;
+
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } 
+    else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+    } 
+    else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+    }
+
+}
         canvas.click(function(e) {
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
             if (seed.hover(x, y)) {
+				var offset = canvas.offset(), x, y;
+			    x = e.pageX - offset.left;
+			    y = e.pageY - offset.top;
+			    if (seed.hover(x, y)) {
                 hold = 0; 
                 canvas.unbind("click");
                 canvas.unbind("mousemove");
@@ -217,5 +237,6 @@
 
 </body>
 </html>
+
 
 
